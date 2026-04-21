@@ -32,7 +32,7 @@ def default_users() -> list[SeedUser]:
                 email=None,
                 adminCenter="ROOT-ADMIN-CENTER",
                 timeZone="EET",
-                menuName="BBM-MENU",
+                menuName="BNB-MENU",
                 comment=None,
                 administrator=False,
                 webUser=False,
