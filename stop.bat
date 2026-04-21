@@ -4,6 +4,7 @@ if not exist uvicorn.pid (
     exit /b
 )
 set /p PID=<uvicorn.pid
+set PID=%PID: =%
 taskkill /PID %PID% /F
 del uvicorn.pid
 echo API stopped.
