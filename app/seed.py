@@ -27,7 +27,7 @@ def default_users() -> list[SeedUser]:
         ),
         SeedUser(
             user=UserPojo(
-                id="svsupport9",
+                id="srvsupport9",
                 name="Galin",
                 email=None,
                 adminCenter="ROOT-ADMIN-CENTER",
@@ -76,7 +76,7 @@ def default_role_assignments() -> list[UserRoleAssignmentPojo]:
             missingRoleAction="Ignore",
         ),
         UserRoleAssignmentPojo(
-            userId="svsupport9",
+            userId="srvsupport9",
             roleIDs=["VIEWER"],
             missingRoleAction="Ignore",
         ),
