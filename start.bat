@@ -4,3 +4,4 @@ timeout /t 2 /nobreak > nul
 for /f "tokens=5" %%a in ('netstat -ano ^| findstr :8000') do echo %%a > uvicorn.pid & goto :done
 :done
 echo API started. PID saved to uvicorn.pid
+exit
