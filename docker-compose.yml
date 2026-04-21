@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: wss-postgres
+    environment:
+      POSTGRES_DB: wss_mock
+      POSTGRES_USER: wss_user
+      POSTGRES_PASSWORD: wss_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  isim-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: isim-api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://wss_user:wss_pass@postgres:5432/wss_mock
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
